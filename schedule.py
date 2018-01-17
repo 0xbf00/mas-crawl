@@ -10,9 +10,9 @@ from scrapyd_api import ScrapydAPI
 
 import argparse
 import os.path
-import sys
 import os
 import time
+import shutil
 
 from datetime import datetime
 from tempfile import mkstemp
@@ -118,6 +118,12 @@ def main():
 
 	# Delete temporary app index file
 	os.remove(app_index)
+
+	# Move latest file to fixed location to allow scripts to fetch this file using
+	# scp
+	shutil.copy2(outfile[len("file://"):],
+				 "/root/mac_apps_{}_latest.jsonlines".format(args.country_code))
+	print("[+] Static location updated with newest dump file.")
 
 	# Update the database entry
 	db_entry = crawl_for_outfile(crawldb, outfile)
