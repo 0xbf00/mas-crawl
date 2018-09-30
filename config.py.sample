@@ -1,0 +1,27 @@
+DATABASES = {
+    'TESTING': {
+        'ENGINE': 'sqlite',
+        'DATABASE_FILE': 'data.db' # Relative filepath!
+    },
+    'PRODUCTION' : {
+        # Only sqlite and postgresql supported thus far.
+        'ENGINE': 'postgresql',
+        'NAME': '#DATABASE_NAME#',
+        'USER': '#DATABASE_USER#',
+        'ADDRESS': '#DATABASE_ADDRESS#',
+        'PASSWORD': '#DATABASE_PASSWORD#'
+    }
+}
+
+# Change for production
+DATABASE = DATABASES['TESTING']
+
+OUTPUT_BASEDIR = '/path/to/basedir/'
+OUTPUT_FORMAT = 'jsonlines'
+
+LATEST_OUTPUT_BASEDIR = '/path/to/basedir'
+
+PUSHOVER_APP_TOKEN = 'APP_TOKEN'
+PUSHOVER_DEVICE_TOKENS = [
+    'DEVICE_TOKEN',
+]
