@@ -19,7 +19,7 @@ import shutil
 import jsonlines
 import gzip
 
-import httplib, urllib
+import http.client, urllib
 
 def send_notification(msg):
     """
