@@ -117,8 +117,9 @@ def do_crawl(country_code):
     }
     run_spider(MacAppSpider, settings, known_apps=existing_apps, country_code=country_code)
 
-    #2: Process the result file. Update internal db.
-    n_existing, n_added = process_output_file(db, session, country_code, output_file)
+    with db.session_scope() as session:
+        #2: Process the result file. Update internal db.
+        n_existing, n_added = process_output_file(db, session, country_code, output_file)
 
     #3: Update static locations (location where the latest metadata is available)
     update_static_location(output_file, country_code)

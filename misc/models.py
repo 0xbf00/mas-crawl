@@ -11,7 +11,7 @@ class MacApp(Base):
     __tablename__ = 'mac_apps'
 
     appId   = Column(Integer, primary_key=True, unique=True, nullable=False)
-    store   = Column(String(2), nullable=False)
+    store   = Column(String(2), primary_key=True, nullable=False)
 
 
 class MacCrawl(Base):
