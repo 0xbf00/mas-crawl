@@ -21,7 +21,7 @@ class MacCrawl(Base):
     __tablename__ = 'mac_crawls'
 
     id          = Column(Integer, primary_key=True, unique=True)
-    store       = Column(String(2), nullable=False) # 'de' or 'use', ...
+    store       = Column(String(2), nullable=False) # 'de' or 'us', ...
     outfile     = Column(String(255), nullable=False)
     
     def __repr__(self):
