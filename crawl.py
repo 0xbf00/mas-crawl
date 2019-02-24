@@ -113,7 +113,8 @@ def do_crawl(country_code):
 
     #1: Invoke the actual spider
     settings = {
-        'FEED_URI': 'file://' + output_file
+        'FEED_URI': 'file://' + output_file,
+        'LOG_LEVEL': 'WARNING'
     }
     run_spider(MacAppSpider, settings, known_apps=existing_apps, country_code=country_code)
 
