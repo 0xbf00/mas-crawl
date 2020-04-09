@@ -2,7 +2,7 @@
 crawl.py: Programmatically invoke the MAS spider.
 """
 from misc.db import Database
-from misc.models import MacCrawl
+from misc.models import MasCrawl
 
 import config
 
@@ -109,7 +109,7 @@ def do_crawl(country_code):
 
     with db.session_scope() as session:
         existing_apps = db.get_mac_apps(session, country_code)
-        db.add_mac_crawl(session, MacCrawl(store=country_code, outfile=output_file))
+        db.add_mas_crawl(session, MasCrawl(store=country_code, outfile=output_file))
 
     #1: Invoke the actual spider
     settings = {

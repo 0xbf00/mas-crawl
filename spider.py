@@ -17,7 +17,7 @@ def itunes_url_extract_id(url):
 
 
 class MacAppSpider(scrapy.Spider):
-    name = 'mac_apps'
+    name = 'mas_apps'
 
     BATCH_SIZE = 100
     COUNTRY_CODE = None

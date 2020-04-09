@@ -14,18 +14,18 @@ class MacApp(Base):
     store   = Column(String(2), primary_key=True, nullable=False)
 
 
-class MacCrawl(Base):
+class MasCrawl(Base):
     """
     Record information about each crawl process
     """
-    __tablename__ = 'mac_crawls'
+    __tablename__ = 'mas_crawls'
 
     id          = Column(Integer, primary_key=True, unique=True)
     store       = Column(String(2), nullable=False) # 'de' or 'us', ...
     outfile     = Column(String(255), nullable=False)
     
     def __repr__(self):
-        return '<MacCrawl: store=%s outfile=%s>' % (self.store, self.outfile)
+        return '<MasCrawl: store=%s outfile=%s>' % (self.store, self.outfile)
 
 
 def initiate_data_definitions(engine):

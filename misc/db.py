@@ -1,4 +1,4 @@
-from .models import MacApp, MacCrawl, initiate_data_definitions
+from .models import MacApp, MasCrawl, initiate_data_definitions
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -68,11 +68,11 @@ class Database:
             session.add(app_entry)
 
 
-    def get_mac_crawls(self, session) -> List[MacCrawl]:
-        return session.query(MacCrawl)\
+    def get_mas_crawls(self, session) -> List[MasCrawl]:
+        return session.query(MasCrawl)\
                       .all()
 
 
-    def add_mac_crawl(self, session, crawl: MacCrawl):
+    def add_mas_crawl(self, session, crawl: MasCrawl):
         session.add(crawl)
     
