@@ -25,7 +25,7 @@ Currently, the [Mac App Store Preview](https://itunes.apple.com/us/genre/mac/id3
 ```bash
 $ gunzip bootstrap.sql.gz
 # Make sure to modify the database name below if you use a different name!
-$ sql data.db < bootstrap.sql
+$ sqlite3 data.db < bootstrap.sql
 ```
 
 ## Design
