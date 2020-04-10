@@ -2,7 +2,7 @@
 
 The `mas-crawl` utility crawls iTunes / Mac App Store (MAS) metadata. As its initial data source, it uses the [Mac App Store Preview](https://itunes.apple.com/us/genre/mac/id39) pages that are accessible without spoofing the user agent. Subsequent scans query metadata for all apps previously found, in addition to parsing the preview website.
 
-⚠️ This utility currently does not work as the Mac App Store Preview website is non-functional as of now (April 9, 2020). See also: Shortcomings
+⚠️ This utility currently does not work as expected because the Mac App Store Preview website is non-functional as of now (April 9, 2020). To mitigate this issue, I've included a list of Mac App Store app IDs I have collected. See below for how to use this.
 
 ## Installation & Usage
 
@@ -18,6 +18,14 @@ $ nano config.py
 # Start crawling. Due to rate limiting employed by the iTunes API,
 # crawls take a couple of hours (2-4)
 python3 crawl.py --country_code us
+```
+
+Currently, the [Mac App Store Preview](https://itunes.apple.com/us/genre/mac/id39) website is non-functional. As a result, this utility will not work as expected. I have therefore included a copy of the app IDs I have collected for apps from the MAS. Note that this list is roughly a year old and will not include apps recently in the meantime. Here's how to make use of the file:
+
+```bash
+$ gunzip bootstrap.sql.gz
+# Make sure to modify the database name below if you use a different name!
+$ sql data.db < bootstrap.sql
 ```
 
 ## Design
