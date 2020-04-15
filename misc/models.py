@@ -5,8 +5,7 @@ Base = declarative_base()
 
 class MacApp(Base):
     """
-    Record all previously seen mac apps. Later crawls crawl all previously
-    seen apps.
+    Record all previously seen mac apps. Later crawls all previously seen apps.
     """
     __tablename__ = 'mac_apps'
 
